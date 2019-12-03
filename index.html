@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>XO</title>
+    <style>
+      div{
+        width: 200px;
+        height: 200px;
+        align-self: auto;
+        margin: 20px;
+        background-color: dimgrey;
+        float: left;
+        display:flex;
+        align-items: center;
+        justify-content: center;
+
+        font-size: 150px;
+      }
+      br{
+        clear:both;
+      }
+    </style>
+    
+</head>
+<body>
+
+  <div id="player" style="width: 680px"></div></br>
+
+  <div id="11"></div> <div id="12"></div> <div id="13"></div></br>
+  <div id="21"></div> <div id="22"></div> <div id="23"></div></br>
+  <div id="31"></div> <div id="32"></div> <div id="33"></div>
+
+  <script>
+
+    var witchPlayer = 0
+    document.getElementById('player').innerHTML = 'X'
+
+   var a1 = 0;
+   var a2 = 0;
+   var a3 = 0;
+
+   var b1 = 0;
+   var b2 = 0;
+   var b3 = 0;
+
+   var c1 = 0;
+   var c2 = 0;
+   var c3 = 0;
+
+    var box11 = document.getElementById('11');
+      box11.onclick = function() {
+        if(witchPlayer==0){document.getElementById('11').innerHTML = 'X';a1=1;witchPlayer=1;document.getElementById('player').innerHTML = 'O'}
+        else if(witchPlayer==1){document.getElementById('11').innerHTML = 'O';a1=2;witchPlayer=0;document.getElementById('player').innerHTML = 'X'}
+      }
+
+      var box12 = document.getElementById('12');
+      box12.onclick = function() {
+        if(witchPlayer==0){document.getElementById('12').innerHTML = 'X';a2=1;witchPlayer=1;document.getElementById('player').innerHTML = 'O'}
+        else if(witchPlayer==1){document.getElementById('12').innerHTML = 'O';a2=2;witchPlayer=0;document.getElementById('player').innerHTML = 'X'}
+      } 
+
+      var box13 = document.getElementById('13');
+      box13.onclick = function() {
+        if(witchPlayer==0){document.getElementById('13').innerHTML = 'X';a3=1;witchPlayer=1;document.getElementById('player').innerHTML = 'O'}
+        else if(witchPlayer==1){document.getElementById('13').innerHTML = 'O';a3=2;witchPlayer=0;document.getElementById('player').innerHTML = 'X'}
+      } 
+
+      var box21 = document.getElementById('21');
+      box21.onclick = function() {
+        if(witchPlayer==0){document.getElementById('21').innerHTML = 'X';b1=1;witchPlayer=1;document.getElementById('player').innerHTML = 'OY'}
+        else if(witchPlayer==1){document.getElementById('21').innerHTML = 'O';b1=2;witchPlayer=0;document.getElementById('player').innerHTML = 'X'}
+      } 
+
+      var box22 = document.getElementById('22');
+      box22.onclick = function() {
+        if(witchPlayer==0){document.getElementById('22').innerHTML = 'X';b2=1;witchPlayer=1;document.getElementById('player').innerHTML = 'O'}
+        else if(witchPlayer==1){document.getElementById('22').innerHTML = 'O';b2=2;witchPlayer=0;document.getElementById('player').innerHTML = 'X'}
+      } 
+
+      var box23 = document.getElementById('23');
+      box23.onclick = function() {
+        if(witchPlayer==0){document.getElementById('23').innerHTML = 'X';b3=1;witchPlayer=1;document.getElementById('player').innerHTML = 'O'}
+        else if(witchPlayer==1){document.getElementById('23').innerHTML = 'O';b3=2;witchPlayer=0;document.getElementById('player').innerHTML = 'X'}
+      } 
+
+      var box31 = document.getElementById('31');
+      box31.onclick = function() {
+        if(witchPlayer==0){document.getElementById('31').innerHTML = 'X';c1=1;witchPlayer=1;document.getElementById('player').innerHTML = 'O'}
+        else if(witchPlayer==1){document.getElementById('31').innerHTML = 'O';c1=2;witchPlayer=0;document.getElementById('player').innerHTML = 'X'}
+      } 
+
+      var box32 = document.getElementById('32');
+      box32.onclick = function() {
+        if(witchPlayer==0){document.getElementById('32').innerHTML = 'X';c2=1;witchPlayer=1;document.getElementById('player').innerHTML = 'O'}
+        else if(witchPlayer==1){document.getElementById('32').innerHTML = 'O';c2=2;witchPlayer=0;document.getElementById('player').innerHTML = 'X'}
+      } 
+
+      var box33 = document.getElementById('33');
+      box33.onclick = function() {
+        if(witchPlayer==0){document.getElementById('33').innerHTML = 'X';c3=1;witchPlayer=1;document.getElementById('player').innerHTML = 'O'}
+        else if(witchPlayer==1){document.getElementById('33').innerHTML = 'O';c3=2;witchPlayer=0;document.getElementById('player').innerHTML = 'X'}
+      } 
+      
+     
+      document.addEventListener("click", function(){
+        if(a1==1 && a2==1 && a3==1){alert('X win');}
+        if(b1==1 && b2==1 && b3==1){alert('X win');}
+        if(c1==1 && c2==1 && c3==1){alert('X win');}
+
+        if(a1==1 && b1==1 && c1==1){alert('X win');}
+        if(a2==1 && b2==1 && c2==1){alert('X win');}
+        if(a3==1 && b3==1 && c3==1){alert('X win');}
+
+        if(a1==1 && b2==1 && c3==1){alert('X win');}
+        if(c1==1 && b2==1 && a3==1){alert('X win');}
+
+
+        if(a1==2 && a2==2 && a3==2){alert('O win');}
+        if(b1==2 && b2==2 && b3==2){alert('O win');}
+        if(c1==2 && c2==2 && c3==2){alert('O win');}
+
+        if(a1==2 && b1==2 && c1==2){alert('O win');}
+        if(a2==2 && b2==2 && c2==2){alert('O win');}
+        if(a3==2 && b3==2 && c3==2){alert('O win');}
+
+        if(a1==2 && b2==2 && c3==2){alert('O win');}
+        if(c1==2 && b2==2 && a3==2){alert('O win');}
+        if(a1 != 0 && a2 != 0 && a3 != 0 && b1 != 0 && b2 != 0 && b3 != 0 && c1 != 0 && c2 != 0 && c3 != 0){alert('remis!');}
+      });
+  </script>
+</form>
+</body>
+</html>
